@@ -1,0 +1,2803 @@
+{\rtf1\ansi\ansicpg936\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red253\green143\blue63;\red31\green31\blue36;\red252\green106\blue93;
+\red255\green255\blue255;\red252\green95\blue163;\red122\green200\blue182;\red150\green134\blue245;\red145\green212\blue98;
+\red153\green232\blue213;\red108\green121\blue134;\red174\green243\blue125;}
+{\*\expandedcolortbl;;\csgenericrgb\c99131\c56076\c24611;\csgenericrgb\c12054\c12284\c14131;\csgenericrgb\c98912\c41558\c36568;
+\csgenericrgb\c100000\c100000\c100000;\csgenericrgb\c98839\c37355\c63833;\csgenericrgb\c47716\c78607\c71403;\csgenericrgb\c58752\c52717\c95948;\csgenericrgb\c56799\c83212\c38450;
+\csgenericrgb\c59926\c90967\c83488;\csgenericrgb\c42394\c47462\c52518;\csgenericrgb\c68215\c95290\c48909;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \
+\
+
+\f1 main.c
+\f0 \
+#include \cf4 <stdio.h>\cf5 \
+\cf2 #include \cf4 <string.h>\cf5 \
+\cf2 #include \cf4 <stdlib.h>\cf5 \
+\cf2 #include \cf4 "
+\f1 \'d4\'a4\'b6\'a8\'d2\'e5\'b3\'a3\'c1\'bf
+\f0 .h"\cf5 \
+\cf2 #include \cf4 "
+\f1 \'b4\'ca\'b7\'a8\'b7\'d6\'ce\'f6
+\f0 .h"\cf5 \
+\cf2 #include \cf4 "Tree_function.h"\cf5 \
+\cf2 #include \cf4 "variable.h"\cf5 \
+\cf2 #include \cf4 "complex_sentences.h"\cf5 \
+\cf2 #include \cf4 "function.h"\cf5 \
+\cf2 #include \cf4 "expression.h"\cf5 \
+\cf2 #include \cf4 "
+\f1 \'d5\'bb
+\f0 .h"\cf5 \
+\
+
+\f2\b \cf6 int
+\f0\b0 \cf5  main() \{\
+    \cf7 FILE\cf5  *fp;\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  filename[\cf8 30\cf5 ];\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  num;\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    \cf9 ASTTree\cf5  root,T,T1;\
+    \cf10 printf\cf5 (\cf4 "input file name: "\cf5 );\
+    \cf10 scanf\cf5 (\cf4 "%s"\cf5 ,filename);\
+    
+\f3\i \cf11 //
+\f1\i0 \'b6\'c1\'ce\'c4\'bc\'fe\'b5\'c4\'b7\'bd\'b7\'a8
+\f0 \cf5 \
+    
+\f2\b \cf6 if
+\f0\b0 \cf5  ((fp=\cf10 fopen\cf5 (filename,\cf4 "rb"\cf5 ))==
+\f2\b \cf6 NULL
+\f0\b0 \cf5 )\
+    \{\
+        \cf10 printf\cf5 (\cf4 "File open error\\n "\cf5 );\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 1\cf5 ;\
+    \}\
+    \cf10 printf\cf5 (\cf4 "
+\f1 \'b5\'a5\'b4\'ca\'c0\'e0\'b1\'f0
+\f0         
+\f1 \'b5\'a5\'b4\'ca\'d6\'b5
+\f0 \\n"\cf5 );\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (!\cf10 feof\cf5 (fp))\{\
+        num=\cf12 gettoken\cf5 (fp);\
+        
+\f2\b \cf6 switch
+\f0\b0 \cf5 (num)\{\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 INT\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 CHAR\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 FLOAT\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 WHILE\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 IF\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 ELSE\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 BREAK\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 FOR\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 RETURN\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 CONTINUE\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 INCLUDE\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b9\'d8\'bc\'fc\'d7\'d6
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 hfile\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'cd\'b7\'ce\'c4\'bc\'fe
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b4\'ed\'ce\'f3
+\f0 \\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 IDENT\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b1\'ea\'ca\'b6\'b7\'fb
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 INT_CONST\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d5\'fb\'d0\'cd\'b3\'a3\'c1\'bf
+\f0        %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 EQ\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b8\'b3\'d6\'b5\'ba\'c5
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 PLUS\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'bc\'d3\'ba\'c5
+\f0         +\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 PLUSPLUS\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d7\'d4\'d4\'f6
+\f0        ++\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 MINUS\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'bc\'f5\'ba\'c5
+\f0        -\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 MINUSMINUS\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d7\'d4\'bc\'f5
+\f0        --\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 MULTIPLY\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b3\'cb\'ba\'c5
+\f0          *\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 DIVIDE\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b3\'fd\'ba\'c5
+\f0          /\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 SEMI\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b7\'d6\'ba\'c5
+\f0          ;\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 COMMA\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b6\'ba\'ba\'c5
+\f0         ,\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 MOD\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'c7\'f3\'d3\'e0\'ba\'c5
+\f0         %s\\n"\cf5 ,\cf9 token_text\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 AND\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'c2\'df\'bc\'ad\'d3\'eb
+\f0         &&\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 OR\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'c2\'df\'bc\'ad\'bb\'f2
+\f0         ||\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 LP\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d7\'f3\'c0\'a8\'ba\'c5
+\f0         (\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 RP\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d3\'d2\'c0\'a8\'ba\'c5
+\f0         )\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 ASSIGN\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b8\'b3\'d6\'b5\'ba\'c5
+\f0         =\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 SMALL\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b1\'c8\'bd\'cf\'b7\'fb
+\f0        <\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 BIG\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b1\'c8\'bd\'cf\'b7\'fb
+\f0        >\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 EM\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'b1\'c8\'bd\'cf\'b7\'fb
+\f0        !=\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 LPP\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d7\'f3\'b4\'f3\'c0\'a8\'ba\'c5
+\f0        \{\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 RPP\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'d3\'d2\'b4\'f3\'c0\'a8\'ba\'c5
+\f0        \}\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 EXP\cf5 :\cf10 printf\cf5 (\cf4 "
+\f1 \'be\'ae\'ba\'c5
+\f0          #\\n"\cf5 );\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+        \}\
+    \}\
+    \cf10 fclose\cf5 (fp);\
+    \cf10 printf\cf5 (\cf4 "input file name: "\cf5 );\
+    \cf10 scanf\cf5 (\cf4 "%s"\cf5 ,filename);\
+    
+\f3\i \cf11 //
+\f1\i0 \'b6\'c1\'ce\'c4\'bc\'fe\'b5\'c4\'b7\'bd\'b7\'a8
+\f0 \cf5 \
+    
+\f2\b \cf6 if
+\f0\b0 \cf5  ((fp=\cf10 fopen\cf5 (filename,\cf4 "rb"\cf5 ))==
+\f2\b \cf6 NULL
+\f0\b0 \cf5 )\
+    \{\
+        \cf10 printf\cf5 (\cf4 "File open error\\n "\cf5 );\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 1\cf5 ;\
+    \}\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (!\cf10 feof\cf5 (fp))\{\
+        T1=\cf12 pre\cf5 (fp);\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (T1==
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ) \cf10 printf\cf5 (\cf4 "
+\f1 \'d4\'a4\'b4\'a6\'c0\'ed\'b4\'ed\'ce\'f3
+\f0 "\cf5 );\
+        root=\cf12 ExtVarDef\cf5 (fp);\
+        T=\cf12 funcDef\cf5 (fp);\
+        \
+        
+\f3\i \cf11 //if(root==NULL) \{printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");break;\}
+\f0\i0 \cf5 \
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (T==
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ) \{\cf10 printf\cf5 (\cf4 "
+\f1 \'b4\'ed\'ce\'f3
+\f0 "\cf5 );
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\}\
+         \cf12 Pre_order\cf5 (T1,\cf12 Visit\cf5 );\
+        \cf12 Pre_order\cf5 (root,\cf12 Visit\cf5 );\
+       \
+        \
+        \cf12 Pre_order\cf5 (T,\cf12 Visit\cf5 );\
+        w=\cf12 gettoken\cf5 (fp);\
+    \}\
+    \cf10 fclose\cf5 (fp);\
+    \
+    \
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf8 0\cf5 ;\
+\}\
+
+\f1 \cf2 \'d5\'bb
+\f0 \cf5 .h\
+\cf2 #ifndef __h\cf5 \
+\cf2 #define __h\cf5 \
+\
+
+\f2\b \cf6 void
+\f0\b0 \cf5  myinitstack(\cf9 stack\cf5  *int_sta)\{\
+    int_sta->\cf9 base\cf5 =(
+\f2\b \cf6 int
+\f0\b0 \cf5  *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (
+\f2\b \cf6 int
+\f0\b0 \cf5 )*\cf8 100\cf5 );\
+    int_sta->\cf9 top\cf5 =int_sta->\cf9 base\cf5 ;\
+\}\
+
+\f2\b \cf6 void
+\f0\b0 \cf5  deletestack(\cf9 stack\cf5   *int_sta)\{\
+    \cf10 free\cf5 (int_sta->\cf9 base\cf5 );\
+\}\
+
+\f2\b \cf6 void
+\f0\b0 \cf5  push(\cf9 stack\cf5  *int_sta,
+\f2\b \cf6 int
+\f0\b0 \cf5  i)\{\
+    *(int_sta->\cf9 top\cf5 ++)=i;\
+\}\
+
+\f2\b \cf6 int
+\f0\b0 \cf5  pop(\cf9 stack\cf5  *int_sta,
+\f2\b \cf6 int
+\f0\b0 \cf5  *i)\{\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (int_sta->\cf9 top\cf5 ==int_sta->\cf9 base\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf8 0\cf5 ;\
+    
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+        *i=*(--int_sta->\cf9 top\cf5 );\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf8 1\cf5 ;\
+    \}\
+\}\
+\cf2 #endif 
+\f3\i \cf11 /* __h */\
+
+\f0\i0 \cf2 #ifndef expression_h\cf5 \
+\cf2 #define expression_h\cf5 \
+\cf2 #include \cf4 "
+\f1 \'d4\'a4\'b6\'a8\'d2\'e5\'b3\'a3\'c1\'bf
+\f0 .h"\cf5 \
+\cf2 #include \cf4 "
+\f1 \'d5\'bb
+\f0 .h"\cf5 \
+
+\f2\b \cf6 char
+\f0\b0 \cf5  MYprecede(
+\f2\b \cf6 char
+\f0\b0 \cf5  *lastc,
+\f2\b \cf6 char
+\f0\b0 \cf5  *token_text)\{\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  precede[\cf8 10\cf5 ][\cf8 10\cf5 ]=\
+    \{       
+\f3\i \cf11 //              +  -    *   /   %  
+\f1\i0 \'a3\'a8
+\f3\i    
+\f1\i0 \'a3\'a9
+\f3\i   =   >
+\f1\i0 \'ba\'cd
+\f3\i < ==
+\f1\i0 \'ba\'cd
+\f3\i !=
+\f0\i0 \cf5 \
+        
+\f3\i \cf11 /* + */
+\f0\i0 \cf5             \{\cf8 '='\cf5 ,\cf8 '>'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* - */
+\f0\i0 \cf5             \{\cf8 '>'\cf5 ,\cf8 '='\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* * */
+\f0\i0 \cf5             \{\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '='\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* / */
+\f0\i0 \cf5             \{\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '='\cf5 ,\cf8 '>'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* % */
+\f0\i0 \cf5             \{\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '='\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* ( */
+\f0\i0 \cf5             \{\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '='\cf5 ,\cf8 '?'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* ) */
+\f0\i0 \cf5             \{\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '>'\cf5 \},\
+        
+\f3\i \cf11 /* = */
+\f0\i0 \cf5             \{\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '?'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 \},\
+        
+\f3\i \cf11 /* >
+\f1\i0 \'ba\'cd
+\f3\i < */
+\f0\i0 \cf5          \{\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '>'\cf5 ,\cf8 '?'\cf5 ,\cf8 '>'\cf5 ,\cf8 '<'\cf5 \},\
+        \cf11 \cb3 /*!=
+\f1 \cf11 \cb3 \'ba\'cd
+\f0 \cf11 \cb3 ==*/\cf5 \cb3          \{\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 ,\cf8 '<'\cf5 \}\
+    \};\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  i=\cf8 0\cf5 ,j=\cf8 0\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "+"\cf5 )==\cf8 0\cf5 ) i=\cf8 0\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "-"\cf5 )==\cf8 0\cf5 ) i=\cf8 1\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "*"\cf5 )==\cf8 0\cf5 ) i=\cf8 2\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "/"\cf5 )==\cf8 0\cf5 ) i=\cf8 3\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "%"\cf5 )==\cf8 0\cf5 ) i=\cf8 4\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "("\cf5 )==\cf8 0\cf5 ) i=\cf8 5\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 ")"\cf5 )==\cf8 0\cf5 ) i=\cf8 6\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (lastc,\cf4 "="\cf5 )==\cf8 0\cf5 ) i=\cf8 7\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 ((\cf10 strcmp\cf5 (lastc,\cf4 ">"\cf5 )==\cf8 0\cf5 )||(\cf10 strcmp\cf5 (lastc,\cf4 ">"\cf5 )==\cf8 0\cf5 )) i=\cf8 8\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 ((\cf10 strcmp\cf5 (lastc,\cf4 "!="\cf5 )==\cf8 0\cf5 )||(\cf10 strcmp\cf5 (lastc,\cf4 "=="\cf5 )==\cf8 0\cf5 )) i=\cf8 9\cf5 ;\
+        \
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "+"\cf5 )==\cf8 0\cf5 ) j=\cf8 0\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "-"\cf5 )==\cf8 0\cf5 ) j=\cf8 1\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "*"\cf5 )==\cf8 0\cf5 ) j=\cf8 2\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "/"\cf5 )==\cf8 0\cf5 ) j=\cf8 3\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "%"\cf5 )==\cf8 0\cf5 ) j=\cf8 4\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "("\cf5 )==\cf8 0\cf5 ) j=\cf8 5\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 ")"\cf5 )==\cf8 0\cf5 ) j=\cf8 6\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "="\cf5 )==\cf8 0\cf5 ) j=\cf8 7\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (token_text,\cf4 "!="\cf5 )==\cf8 0\cf5 ) j=\cf8 8\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 ((\cf10 strcmp\cf5 (token_text,\cf4 ">"\cf5 )==\cf8 0\cf5 )||(\cf10 strcmp\cf5 (token_text,\cf4 ">"\cf5 )==\cf8 0\cf5 )) i=\cf8 8\cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 ((\cf10 strcmp\cf5 (token_text,\cf4 "!="\cf5 )==\cf8 0\cf5 )||(\cf10 strcmp\cf5 (token_text,\cf4 "=="\cf5 )==\cf8 0\cf5 )) i=\cf8 9\cf5 ;\
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  precede[i][j];\
+\}\
+\cf9 ASTTree\cf5  MYexp(\cf7 FILE\cf5  *fp)\{\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  token_text0[\cf8 100\cf5 ];\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  lastc[\cf8 100\cf5 ];\
+    \cf9 ASTTree\cf5  root = 
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,p=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    
+\f3\i \cf11 //stack *op = NULL;
+\f0\i0 \cf5 \
+    
+\f3\i \cf11 //myinitstack(op);
+\f0\i0 \cf5 \
+    (root)=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (root)->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f3\i \cf11 //printf("aaa%s",token_text);
+\f0\i0 \cf5 \
+    
+\f3\i \cf11 //if(w!=INT_CONST||w!=IDENT) return NULL;
+\f0\i0 \cf5 \
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 BIG\cf5 ) \cf2 strcpy\cf5 ((root)->\cf9 data\cf5 ,\cf4 ">"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SMALL\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "<"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EM\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "!="\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EQ\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "=="\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 ASSIGN\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "="\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 PLUS\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "+"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MINUS\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "-"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MULTIPLY\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "*"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 DIVIDE\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "/"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 PLUSPLUS\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "++"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MINUSMINUS\cf5 ) \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "--"\cf5 );\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 ||w==\cf12 RP\cf5 )\{\
+        \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,token_text0);\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+    \}\
+    (root)->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (root)->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+    \cf2 strcpy\cf5 (lastc,\cf9 token_text\cf5 );\
+    
+\f3\i \cf11 //if(w==MULTIPLY) printf("hjq");
+\f0\i0 \cf5 \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 RP\cf5 ) \{ 
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\}\
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );
+\f3\i \cf11 //
+\f0\i0 \cf5 \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f3\i \cf11 //if(w==MULTIPLY) printf("11%s",token_text);
+\f0\i0 \cf5 \
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 ||w==\cf12 RP\cf5 )\{\
+        (root)->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+        (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \cf2 strcpy\cf5 ((root)->\cf9 rchild\cf5 ->\cf9 data\cf5 ,token_text0);\}\
+    
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (w>=\cf12 EQ\cf5 &&w<=\cf12 SMALL\cf5 )\{\
+            
+\f3\i \cf11 //printf("%c",MYprecede(lastc,token_text));
+\f0\i0 \cf5 \
+        \
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf12 MYprecede\cf5 (lastc,\cf9 token_text\cf5 )==\cf8 '<'\cf5 )\{\
+                p=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 PLUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "+"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MINUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "-"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MULTIPLY\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "*"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 DIVIDE\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "/"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 BIG\cf5 ) \cf2 strcpy\cf5 ((p)->\cf9 data\cf5 ,\cf4 ">"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SMALL\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "<"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EM\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "!="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EQ\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "=="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 ASSIGN\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "="\cf5 );\
+                p->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                \cf2 strcpy\cf5 (p->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+                w=\cf12 gettoken\cf5 (fp);\
+                \cf2 strcpy\cf5 (p->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+                root->\cf9 rchild\cf5 =p;\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 ||w==\cf12 RP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+            \}\
+            
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf12 MYprecede\cf5 (lastc,\cf9 token_text\cf5 )==\cf8 '>'\cf5 )\{\
+                (root)->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                (root)->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                \cf2 strcpy\cf5 ((root)->\cf9 rchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+                p=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 PLUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "+"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MINUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "-"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MULTIPLY\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "*"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 DIVIDE\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "/"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 BIG\cf5 ) \cf2 strcpy\cf5 ((p)->\cf9 data\cf5 ,\cf4 ">"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SMALL\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "<"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EM\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "!="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EQ\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "=="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 ASSIGN\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "="\cf5 );\
+                p->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 =root;\
+                w=\cf12 gettoken\cf5 (fp);\
+                \cf2 strcpy\cf5 (p->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+                root=p;\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 ||w==\cf12 RP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+            \}\
+            
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf12 MYprecede\cf5 (lastc,\cf9 token_text\cf5 )==\cf8 '='\cf5 )\{\
+                p=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 PLUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "+"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MINUS\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "-"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 MULTIPLY\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "*"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 DIVIDE\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "/"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 BIG\cf5 ) \cf2 strcpy\cf5 ((p)->\cf9 data\cf5 ,\cf4 ">"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SMALL\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "<"\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EM\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "!="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 EQ\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "=="\cf5 );\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 ASSIGN\cf5 ) \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "="\cf5 );\
+                p->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                p->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                p->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                \cf2 strcpy\cf5 (p->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+                w=\cf12 gettoken\cf5 (fp);\
+                \cf2 strcpy\cf5 (p->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+                root->\cf9 rchild\cf5 =p;\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 ||w==\cf12 RP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+            \}\
+        \
+    \}\
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+\}\
+\
+\cf2 #endif 
+\f3\i \cf11 /* expression_h */
+\f0\i0 \cf5 \
+\cf2 #ifndef function_h\cf5 \
+\cf2 #define function_h\cf5 \
+\
+\cf9 ASTTree\cf5  funcDef(\cf7 FILE\cf5  *fp)\{
+\f3\i \cf11 //
+\f1\i0 \'ba\'af\'ca\'fd\'b6\'a8\'d2\'e5\'ba\'cd\'c9\'f9\'c3\'f7
+\f0 \cf5 \
+    \cf9 ASTTree\cf5  root=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,p=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    w=\cf12 gettoken\cf5 (fp);\
+    (root)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (root)->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 data\cf5 ,\cf4 "
+\f1 \'ba\'af\'ca\'fd
+\f0 "\cf5 );\
+    \
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    (root)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    (root)->\cf9 midchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f3\i \cf11 //if(w!=LP) return NULL;
+\f0\i0 \cf5 \
+   
+\f2\b \cf6 while
+\f0\b0 \cf5 (w!=\cf12 RP\cf5 )\{\
+        w=\cf12 gettoken\cf5 (fp);\
+       
+\f2\b \cf6 switch
+\f0\b0 \cf5 (w)\{\
+           
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 INT\cf5 :\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c0\'e0\'d0\'cd
+\f0 "\cf5 );\
+       \
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+        \
+        w=\cf12 gettoken\cf5 (fp);\
+        (p)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+        p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c3\'fb
+\f0 "\cf5 );\
+        (root)->\cf9 midchild\cf5 ->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =p;\
+        (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+        \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+        p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \
+        
+\f3\i \cf11 //w=gettoken(fp);
+\f0\i0 \cf5 \
+        
+\f3\i \cf11 /*while(1)\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11             if(w==SEMI)
+\f0\i0 \cf5 \
+
+\f3\i \cf11             \{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 break;
+\f0\i0 \cf5 \
+
+\f3\i \cf11             \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11             else if(w==COMMA)\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 w=gettoken(fp);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 if(w!=IDENT)
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 \{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                     printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                     return NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 (q)=(ASTnode*)malloc(sizeof(ASTnode));
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 q->lchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 q->rchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 q->midchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 strcpy((q)->data,"
+\f1\i0 \'d0\'ce\'b2\'ce
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 (p)->rchild=q;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 p=q;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 (p)->lchild=(ASTnode*)malloc(sizeof(ASTnode));
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 p->lchild->lchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 p->lchild->rchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 p->lchild->midchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 strcpy((p)->lchild->data,token_text);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 w=gettoken(fp);
+\f0\i0 \cf5 \
+
+\f3\i \cf11             \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11             else\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                 return NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11             \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11         \}*/
+\f0\i0 \cf5 \
+               \
+               
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+           
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 FLOAT\cf5 :\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c0\'e0\'d0\'cd
+\f0 "\cf5 );\
+               \
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+               \
+               w=\cf12 gettoken\cf5 (fp);\
+               (p)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c3\'fb
+\f0 "\cf5 );\
+               (root)->\cf9 midchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =p;\
+               (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+               p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \
+               
+\f3\i \cf11 /*w=gettoken(fp);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                while(1)\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    if(w==SEMI)
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    \{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        break;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    else if(w==COMMA)\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        w=gettoken(fp);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        if(w!=IDENT)
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        \{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                            printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                            return NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        (q)=(ASTnode*)malloc(sizeof(ASTnode));
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        q->lchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        q->rchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        q->midchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        strcpy((q)->data,"
+\f1\i0 \'d0\'ce\'b2\'ce
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        (p)->rchild=q;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        p=q;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        (p)->lchild=(ASTnode*)malloc(sizeof(ASTnode));
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        p->lchild->lchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        p->lchild->rchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        p->lchild->midchild=NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        strcpy((p)->lchild->data,token_text);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        w=gettoken(fp);
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    else\{
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+
+\f3\i \cf11                        return NULL;
+\f0\i0 \cf5 \
+
+\f3\i \cf11                    \}
+\f0\i0 \cf5 \
+
+\f3\i \cf11                \}*/
+\f0\i0 \cf5 \
+               
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+           
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 CHAR\cf5 :\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c0\'e0\'d0\'cd
+\f0 "\cf5 );\
+               \
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 ((root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+               \
+               w=\cf12 gettoken\cf5 (fp);\
+               (p)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               \cf2 strcpy\cf5 (p->\cf9 data\cf5 ,\cf4 "
+\f1 \'d0\'ce\'b2\'ce\'c3\'fb
+\f0 "\cf5 );\
+               (root)->\cf9 midchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =p;\
+               (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+               \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+               p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+               
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+       \}\
+    \}\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    (root)->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 )\{\
+        \cf2 strcpy\cf5 ((root)->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'ba\'af\'ca\'fd\'c9\'f9\'c3\'f7
+\f0 "\cf5 );\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+    \}\
+    
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 LPP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+            \cf2 strcpy\cf5 ((root)->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'ba\'af\'ca\'fd\'cc\'e5
+\f0 "\cf5 );\
+            (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+            (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \
+            (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =\cf12 complex\cf5 (fp);\
+        \}\
+    \}\
+    \
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+\}\
+\
+\cf2 #endif 
+\f3\i \cf11 /* function_h */\
+
+\f0\i0 \cf2 #ifndef complex_sentences_h\cf5 \
+\cf2 #define complex_sentences_h\cf5 \
+\cf2 #include \cf4 "expression.h"\cf5 \
+\cf9 ASTTree\cf5  complex(\cf7 FILE\cf5 *fp)\{
+\f3\i \cf11 //
+\f1\i0 \'b8\'b4\'ba\'cf\'d3\'ef\'be\'e4
+\f0 \cf5 \
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    \cf9 ASTTree\cf5  root = 
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf9 ASTTree\cf5  IF_ELSE=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,MYwhile=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,MYfor=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (root)->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    (root)->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //if-else
+\f0\i0 \cf5 \
+    root->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "if-else
+\f1 \'d3\'ef\'be\'e4
+\f0 "\cf5 );\
+    (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //return
+\f0\i0 \cf5 \
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "return
+\f1 \'d3\'ef\'be\'e4
+\f0 "\cf5 );\
+    (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //while
+\f0\i0 \cf5 \
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "while
+\f1 \'d3\'ef\'be\'e4
+\f0 "\cf5 );\
+    (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //for
+\f0\i0 \cf5 \
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "for
+\f1 \'d3\'ef\'be\'e4
+\f0 "\cf5 );\
+    (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //expression
+\f0\i0 \cf5 \
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'b1\'ed\'b4\'ef\'ca\'bd
+\f0 "\cf5 );\
+    \
+    (IF_ELSE)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    (IF_ELSE)->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (IF_ELSE)->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (IF_ELSE)->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((IF_ELSE)->\cf9 data\cf5 ,\cf4 "if-else"\cf5 );\
+    MYwhile=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    MYwhile->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    MYwhile->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    MYwhile->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((MYwhile)->\cf9 data\cf5 ,\cf4 "while"\cf5 );\
+    MYfor=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    MYfor->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    MYfor->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    MYfor->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((MYfor)->\cf9 data\cf5 ,\cf4 "for"\cf5 );\
+    \
+    \cf2 strcpy\cf5 ((root)->\cf9 data\cf5 ,\cf4 "
+\f1 \'b8\'b4\'ba\'cf\'d3\'ef\'be\'e4
+\f0 "\cf5 );\
+    w=\cf12 gettoken\cf5 (fp);\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (w!=\cf12 RPP\cf5 )\{\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w>=\cf12 INT\cf5 &&w<=\cf12 FLOAT\cf5 )\{\
+        root->\cf9 lchild\cf5 =\cf12 ExtVarDef1\cf5 (fp);\
+    \}\
+    
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+        
+\f3\i \cf11 //w=gettoken(fp);
+\f0\i0 \cf5 \
+        
+\f3\i \cf11 //printf("%s",token_text);
+\f0\i0 \cf5 \
+        
+\f2\b \cf6 switch
+\f0\b0 \cf5 (w)\{\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 IF\cf5 :\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f3\i \cf11 //printf("%s",token_text);
+\f0\i0 \cf5 \
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 LP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                (IF_ELSE)->\cf9 lchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                (IF_ELSE)->\cf9 midchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                w=\cf12 gettoken\cf5 (fp);\
+                \
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 ELSE\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                (IF_ELSE)->\cf9 rchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                (root)->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =IF_ELSE;\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f3\i \cf11 //w=gettoken(fp);
+\f0\i0 \cf5 \
+                \
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 RETURN\cf5 :\
+                (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //return
+\f0\i0 \cf5 \
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf4 "return"\cf5 );\
+                
+\f3\i \cf11 //w=gettoken(fp);
+\f0\i0 \cf5 \
+                (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));
+\f3\i \cf11 //return
+\f0\i0 \cf5 \
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 WHILE\cf5 :\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f3\i \cf11 //printf("%s",token_text);
+\f0\i0 \cf5 \
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 LP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYwhile->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                MYwhile->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYwhile->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYwhile->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                (MYwhile)->\cf9 lchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 )\{\
+                    MYwhile->\cf9 midchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                    MYwhile->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYwhile->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYwhile->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    \cf2 strcpy\cf5 (MYwhile->\cf9 midchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'cb\'c0\'d1\'ad\'bb\'b7
+\f0 "\cf5 );\
+                \}\
+                
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 LPP\cf5 )\{\
+                    MYwhile->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                    MYwhile->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYwhile->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYwhile->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    \cf2 strcpy\cf5 (MYwhile->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'d1\'ad\'bb\'b7\'cc\'e5
+\f0 "\cf5 );\
+                    MYwhile->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =\cf12 complex\cf5 (fp);\
+                    \
+                \}\
+                (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =MYwhile;\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 FOR\cf5 :\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f3\i \cf11 //printf("111%s\\n",token_text);
+\f0\i0 \cf5 \
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 LP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYfor->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                MYfor->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYfor->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYfor->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                MYfor->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                MYfor->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                MYfor->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                w=\cf12 gettoken\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 )\{\
+                    MYfor->\cf9 midchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                    MYfor->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYfor->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYfor->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    \cf2 strcpy\cf5 (MYfor->\cf9 midchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'cb\'c0\'d1\'ad\'bb\'b7
+\f0 "\cf5 );\
+                \}\
+                
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 LPP\cf5 )\{\
+                    MYfor->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+                    MYfor->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYfor->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    MYfor->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+                    \cf2 strcpy\cf5 (MYfor->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf4 "
+\f1 \'d1\'ad\'bb\'b7\'cc\'e5
+\f0 "\cf5 );\
+                    MYfor->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =\cf12 complex\cf5 (fp);\
+                    \
+                \}\
+                (root)->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =MYfor;\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+            
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf12 EXP\cf5 :\
+                root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =\cf12 MYexp\cf5 (fp);\
+                
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+                
+\f3\i \cf11 //w=gettoken(fp);
+\f0\i0 \cf5 \
+        \}\
+        \
+    \}\
+        w=\cf12 gettoken\cf5 (fp);\
+        \
+    \}\
+    \
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+\}\
+\
+\cf2 #endif 
+\f3\i \cf11 /* complex_sentences_h */
+\f0\i0 \cf5 \
+\cf2 #ifndef variable_h\cf5 \
+\cf2 #define variable_h\cf5 \
+\cf9 ASTTree\cf5  pre(\cf7 FILE\cf5  *fp)\{\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    \cf9 ASTTree\cf5  root=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 lchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 midchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 midchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 midchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 midchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 =(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 rchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 rchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 data\cf5 ,\cf4 "
+\f1 \'b1\'e0\'d2\'eb\'d4\'a4\'b4\'a6\'c0\'ed
+\f0 "\cf5 );\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 EXP\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf4 "#"\cf5 );\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 INCLUDE\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 midchild\cf5 ->\cf9 data\cf5 ,\cf4 "include"\cf5 );\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 SMALL\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 hfile\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 (root->\cf9 rchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 BIG\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+\}\
+\cf9 ASTTree\cf5  ExtVarDef(\cf7 FILE\cf5  *fp)\{
+\f3\i \cf11 //
+\f1\i0 \'cd\'e2\'b2\'bf\'b1\'e4\'c1\'bf
+\f0 \cf5 \
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  token_text0[\cf8 100\cf5 ];\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    \cf9 ASTTree\cf5  root=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,p=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,q=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+\
+    root=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 data\cf5 ,\cf4 "
+\f1 \'cd\'e2\'b2\'bf\'b1\'e4\'c1\'bf\'c0\'e0\'d0\'cd\'a3\'ba
+\f0 "\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );\
+    (root)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    \cf2 strcpy\cf5 ((root)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+    root->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    (p)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 =p;\
+    \cf2 strcpy\cf5 ((p)->\cf9 data\cf5 ,\cf4 "
+\f1 \'cd\'e2\'b2\'bf\'b1\'e4\'c1\'bf\'c3\'fb\'a3\'ba
+\f0 "\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    \
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );\
+    (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+    p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (\cf8 1\cf5 )\{\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 )\
+        \{\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+        \}\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 COMMA\cf5 )\{\
+            w=\cf12 gettoken\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 IDENT\cf5 )\
+            \{\
+                
+\f3\i \cf11 //printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+                
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \}\
+            (q)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+            q->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            q->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            q->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \cf2 strcpy\cf5 ((q)->\cf9 data\cf5 ,\cf4 "
+\f1 \'cd\'e2\'b2\'bf\'b1\'e4\'c1\'bf\'c3\'fb\'a3\'ba
+\f0 "\cf5 );\
+            (p)->\cf9 rchild\cf5 =q;\
+            p=q;\
+            (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+            p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+            w=\cf12 gettoken\cf5 (fp);\
+        \}\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+            
+\f3\i \cf11 //printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \}\
+    \}\
+\}\
+\cf9 ASTTree\cf5  ExtVarDef1(\cf7 FILE\cf5  *fp)\{
+\f3\i \cf11 //
+\f1\i0 \'cd\'e2\'b2\'bf\'b1\'e4\'c1\'bf
+\f0 \cf5 \
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  token_text0[\cf8 100\cf5 ];\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  w;\
+    \cf9 ASTTree\cf5  root=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,p=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ,q=
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    root=(\cf9 ASTTree\cf5 )\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    root->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \cf2 strcpy\cf5 ((root)->\cf9 data\cf5 ,\cf4 "
+\f1 \'be\'d6\'b2\'bf\'b1\'e4\'c1\'bf\'c0\'e0\'d0\'cd\'a3\'ba
+\f0 "\cf5 );\
+    \
+    \
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );\
+    (root)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    \cf2 strcpy\cf5 ((root)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+    root->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    root->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    (p)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    p->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    (root)->\cf9 rchild\cf5 =p;\
+    \cf2 strcpy\cf5 ((p)->\cf9 data\cf5 ,\cf4 "
+\f1 \'be\'d6\'b2\'bf\'b1\'e4\'c1\'bf\'c3\'fb\'a3\'ba
+\f0 "\cf5 );\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    \cf2 strcpy\cf5 (token_text0,\cf9 token_text\cf5 );\
+    (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+    \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,token_text0);\
+    p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+    \
+    w=\cf12 gettoken\cf5 (fp);\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (\cf8 1\cf5 )\{\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 SEMI\cf5 )\
+        \{\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  root;\
+        \}\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (w==\cf12 COMMA\cf5 )\{\
+            w=\cf12 gettoken\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (w!=\cf12 IDENT\cf5 )\
+            \{\
+                
+\f3\i \cf11 //printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+                
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \}\
+            (q)=(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+            q->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            q->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            q->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \cf2 strcpy\cf5 ((q)->\cf9 data\cf5 ,\cf4 "
+\f1 \'be\'d6\'b2\'bf\'b1\'e4\'c1\'bf\'c3\'fb\'a3\'ba
+\f0 "\cf5 );\
+            (p)->\cf9 rchild\cf5 =q;\
+            p=q;\
+            (p)->\cf9 lchild\cf5 =(\cf9 ASTnode\cf5 *)\cf10 malloc\cf5 (
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 ASTnode\cf5 ));\
+            p->\cf9 lchild\cf5 ->\cf9 lchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            p->\cf9 lchild\cf5 ->\cf9 rchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            p->\cf9 lchild\cf5 ->\cf9 midchild\cf5 =
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+            \cf2 strcpy\cf5 ((p)->\cf9 lchild\cf5 ->\cf9 data\cf5 ,\cf9 token_text\cf5 );\
+            w=\cf12 gettoken\cf5 (fp);\
+        \}\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5 \{\
+            
+\f3\i \cf11 //printf("
+\f1\i0 \'b4\'ed\'ce\'f3
+\f3\i ");
+\f0\i0 \cf5 \
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ;\
+        \}\
+    \}\
+\}\
+\
+\cf2 #endif 
+\f3\i \cf11 /* variable_h */
+\f0\i0 \cf5 \
+\cf2 #ifndef Tree_function_h\cf5 \
+\cf2 #define Tree_function_h\cf5 \
+\
+
+\f2\b \cf6 int
+\f0\b0 \cf5  Visit(\cf9 ASTTree\cf5  T)\{\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (T==
+\f2\b \cf6 NULL
+\f0\b0 \cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 5\cf5 ;\
+    \cf10 printf\cf5 (\cf4 "%s   \\n"\cf5 ,T->\cf9 data\cf5 );\
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 6\cf5 ;\
+\}\
+
+\f2\b \cf6 int
+\f0\b0 \cf5  Pre_order(\cf9 ASTTree\cf5  T, 
+\f2\b \cf6 int
+\f0\b0 \cf5  (*Visit)(\cf9 ASTTree\cf5  T)) \{\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5  (T) \{\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5  (Visit(T))\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5  (\cf12 Pre_order\cf5 (T->\cf9 lchild\cf5 , Visit))\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5  (\cf12 Pre_order\cf5 (T->\cf9 midchild\cf5 , Visit))\
+                    
+\f2\b \cf6 if
+\f0\b0 \cf5  (\cf12 Pre_order\cf5 (T->\cf9 rchild\cf5 , Visit)) 
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 6\cf5 ;\
+        \
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 5\cf5 ;\
+    \}\
+    
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 return
+\f0\b0 \cf5  -\cf8 6\cf5 ;\
+\}\
+\
+\cf2 #endif 
+\f3\i \cf11 /* Tree_function_h */\
+
+\f0\i0 \cf2 #include\cf4 "
+\f1 \'d4\'a4\'b6\'a8\'d2\'e5\'b3\'a3\'c1\'bf
+\f0 .h"\cf5 \
+\cf2 #ifndef _____h\cf5 \
+\cf2 #define _____h\cf5 \
+\
+
+\f2\b \cf6 int
+\f0\b0 \cf5  gettoken(\cf7 FILE\cf5  *fp)\{\
+    \cf2 memset\cf5 (\cf9 token_text\cf5 ,\cf8 0\cf5 , 
+\f2\b \cf6 sizeof
+\f0\b0 \cf5 (\cf9 token_text\cf5 ));\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  c;\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  i,j=\cf8 0\cf5 ;\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  count=\cf8 0\cf5 ;\
+    c=\cf10 fgetc\cf5 (fp);\
+    
+\f2\b \cf6 while
+\f0\b0 \cf5 (\cf8 1\cf5 )\{\
+        
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 ' '\cf5 ) c=\cf10 fgetc\cf5 (fp);\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+    \}\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 ((c>=\cf8 'A'\cf5 &&c<=\cf8 'Z'\cf5 )||(c>=\cf8 'a'\cf5 &&c<=\cf8 'z'\cf5 )||(c==\cf8 '_'\cf5 ))\{\
+        
+\f2\b \cf6 do
+\f0\b0 \cf5 \{\
+            \cf9 token_text\cf5 [j++]=c;\
+            c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '.'\cf5 )\
+            \{\
+                \cf9 token_text\cf5 [j++]=c;\
+                c=\cf10 fgetc\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 'h'\cf5 )\
+                \{\cf9 token_text\cf5 [j++]=c; 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 hfile\cf5 ;\}\
+                
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+            \}\
+        \}
+\f2\b \cf6 while
+\f0\b0 \cf5 ((c>=\cf8 'A'\cf5 &&c<=\cf8 'Z'\cf5 )||(c>=\cf8 'a'\cf5 &&c<=\cf8 'z'\cf5 )||(c>=\cf8 '0'\cf5 &&c<=\cf8 '9'\cf5 ));\
+        \cf10 ungetc\cf5 (c,fp);\
+      
+\f2\b \cf6 for
+\f0\b0 \cf5 (i=\cf8 0\cf5 ;i<\cf8 11\cf5 ;i++)\{\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 strcmp\cf5 (\cf9 keywords\cf5 [i],\cf9 token_text\cf5 )==\cf8 0\cf5 )\
+                
+\f2\b \cf6 return
+\f0\b0 \cf5  i;\
+        \}\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 IDENT\cf5 ;\
+    \}\
+    
+\f2\b \cf6 if
+\f0\b0 \cf5 (c>=\cf8 '0'\cf5 &&c<=\cf8 '9'\cf5 )\{\
+        
+\f2\b \cf6 do
+\f0\b0 \cf5 \{\
+            \cf9 token_text\cf5 [j++]=c;\
+            c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 'x'\cf5 )\
+            \{\cf9 token_text\cf5 [j++]=c;\
+                c=\cf10 fgetc\cf5 (fp);\
+                
+\f2\b \cf6 if
+\f0\b0 \cf5 (c<=\cf8 '0'\cf5 ||c>=\cf8 '9'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+            \}\
+            
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 if
+\f0\b0 \cf5 (c>=\cf8 'a'\cf5 &&c<=\cf8 'z'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+        \}
+\f2\b \cf6 while
+\f0\b0 \cf5 ((c>=\cf8 '0'\cf5 &&c<=\cf8 '9'\cf5 ));\
+        \cf10 ungetc\cf5 (c,fp);\
+        
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 INT_CONST\cf5 ;\
+    \}\
+    
+\f2\b \cf6 switch
+\f0\b0 \cf5  (c) \{\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '='\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '='\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 EQ\cf5 ;\
+            \cf10 ungetc\cf5 (c,fp);\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ASSIGN\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '+'\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '+'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 PLUSPLUS\cf5 ;\
+            \cf10 ungetc\cf5 (c,fp);\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 PLUS\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '-'\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '-'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 MINUSMINUS\cf5 ;\
+            \cf10 ungetc\cf5 (c,fp);\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 MINUS\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '*'\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 MULTIPLY\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '/'\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 DIVIDE\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 ';'\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 SEMI\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 ','\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 COMMA\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '%'\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 MOD\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '&'\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '&'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 AND\cf5 ;\
+            \cf10 ungetc\cf5 (c,fp);\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '|'\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '|'\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 OR\cf5 ;\
+            \cf10 ungetc\cf5 (c,fp);\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '('\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 LP\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 ')'\cf5 :\
+            
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 RP\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '\\n'\cf5 :count++;\
+            
+\f2\b \cf6 break
+\f0\b0 \cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '>'\cf5 :
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 BIG\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '<'\cf5 :
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 SMALL\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '\{'\cf5 :
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 LPP\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '\}'\cf5 :
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 RPP\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '#'\cf5 :
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 EXP\cf5 ;\
+        
+\f2\b \cf6 case
+\f0\b0 \cf5  \cf8 '!'\cf5 :c=\cf10 fgetc\cf5 (fp);\
+            
+\f2\b \cf6 if
+\f0\b0 \cf5 (c==\cf8 '='\cf5 ) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 EM\cf5 ;\
+            
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+        
+\f2\b \cf6 default
+\f0\b0 \cf5 :
+\f2\b \cf6 if
+\f0\b0 \cf5 (\cf10 feof\cf5 (fp)) 
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf2 EOF\cf5 ;\
+        
+\f2\b \cf6 else
+\f0\b0 \cf5  
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf12 ERROR_TOKEN\cf5 ;\
+    \}\
+    
+\f2\b \cf6 return
+\f0\b0 \cf5  \cf8 100\cf5 ;\
+\}\
+\cf2 #endif 
+\f3\i \cf11 /* _____h */
+\f0\i0 \cf5 \
+\cf2 #ifndef ______h\cf5 \
+\cf2 #define ______h\cf5 \
+\
+
+\f2\b \cf6 char
+\f0\b0 \cf5  keywords[\cf8 11\cf5 ][\cf8 11\cf5 ]=\{\cf4 "int"\cf5 ,\cf4 "char"\cf5 ,\cf4 "float"\cf5 ,\cf4 "while"\cf5 ,\cf4 "if"\cf5 ,\cf4 "else"\cf5 ,\cf4 "break"\cf5 ,\cf4 "for"\cf5 ,\cf4 "return"\cf5 ,\cf4 "continue"\cf5 ,\cf4 "include"\cf5 \
+\};\
+
+\f2\b \cf6 enum
+\f0\b0 \cf5  token_kind\{INT=\cf8 0\cf5 ,CHAR,FLOAT,WHILE,IF,ELSE,BREAK,FOR,RETURN,CONTINUE,INCLUDE,hfile,ERROR_TOKEN,IDENT,INT_CONST,EQ,PLUS,PLUSPLUS,MINUS,MINUSMINUS,MULTIPLY,DIVIDE,ASSIGN,SEMI,COMMA,MOD,AND,OR,LP,RP,BIG,SMALL,EM,LPP,RPP,EXP\};\
+
+\f2\b \cf6 char
+\f0\b0 \cf5  token_text[\cf8 100\cf5 ];\
+\
+
+\f2\b \cf6 typedef
+\f0\b0 \cf5  
+\f2\b \cf6 struct
+\f0\b0 \cf5  ASTnode\{\
+    
+\f2\b \cf6 char
+\f0\b0 \cf5  data[\cf8 100\cf5 ];\
+    
+\f2\b \cf6 struct
+\f0\b0 \cf5  \cf9 ASTnode\cf5  *lchild;\
+    
+\f2\b \cf6 struct
+\f0\b0 \cf5  \cf9 ASTnode\cf5  *rchild;\
+    
+\f2\b \cf6 struct
+\f0\b0 \cf5  \cf9 ASTnode\cf5  *midchild;\
+    \
+\}ASTnode,*ASTTree;\
+\
+\
+
+\f2\b \cf6 typedef
+\f0\b0 \cf5  
+\f2\b \cf6 struct
+\f0\b0 \cf5  stack\{\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  *base;\
+    
+\f2\b \cf6 int
+\f0\b0 \cf5  *top;\
+\}stack;\
+\
+\
+\cf2 #endif 
+\f3\i \cf11 /* ______h */
+\f0\i0 \cf5 \
+\
+}
