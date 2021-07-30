@@ -1,0 +1,4 @@
+﻿  源.cpp
+C:\Users\huangjunqidemac\Desktop\lab2\lab2\源.cpp(120,1): warning C4297: “QUEUE::print”: 假定函数不引发异常，但确实发生了
+C:\Users\huangjunqidemac\Desktop\lab2\lab2\源.cpp(120,1): message : 在函数上指定了 __declspec(nothrow)、throw()、noexcept(true)或 noexcept
+  lab2.vcxproj -> C:\Users\huangjunqidemac\Desktop\lab2\Debug\lab2.exe

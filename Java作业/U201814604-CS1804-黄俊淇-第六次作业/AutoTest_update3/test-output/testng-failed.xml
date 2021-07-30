@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All Test Suite (1)]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="D:/IdeaWorkspace/TestNGDemo/test/homework/ch11_13/ComponentListTest.java(failed)">
+    <classes>
+      <class name="homework.ch11_13.ComponentListTest">
+        <methods>
+          <include name="testHasNext"/>
+          <include name="testNext"/>
+        </methods>
+      </class> <!-- homework.ch11_13.ComponentListTest -->
+    </classes>
+  </test> <!-- D:/IdeaWorkspace/TestNGDemo/test/homework/ch11_13/ComponentListTest.java(failed) -->
+  <test thread-count="5" name="D:/IdeaWorkspace/TestNGDemo/test/homework/ch11_13/CompositeIteratorTest.java(failed)">
+    <classes>
+      <class name="homework.ch11_13.CompositeIteratorTest">
+        <methods>
+          <include name="testHasNext" invocation-numbers="0"/>
+          <include name="testNext" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- homework.ch11_13.CompositeIteratorTest -->
+    </classes>
+  </test> <!-- D:/IdeaWorkspace/TestNGDemo/test/homework/ch11_13/CompositeIteratorTest.java(failed) -->
+</suite> <!-- Failed suite [All Test Suite (1)] -->

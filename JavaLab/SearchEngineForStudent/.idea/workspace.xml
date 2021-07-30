@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="565e3459-644f-4e39-8ece-23cb8151a5c5" name="Default Changelist" comment="JavaLab search,parse complete">
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentBuilderTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentBuilderTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentBuilderTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentBuilderTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_DocumentTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexBuilderTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexBuilderTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexBuilderTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexBuilderTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_IndexTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingListTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingListTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingListTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingListTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_PostingTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTupleTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTupleTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTupleTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_index_TermTupleTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_LengthTermTupleFilterTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_LengthTermTupleFilterTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_LengthTermTupleFilterTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_LengthTermTupleFilterTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_PatternTermTupleFilterTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_PatternTermTupleFilterTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_PatternTermTupleFilterTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_PatternTermTupleFilterTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_ScannerFilterAllInOneTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_ScannerFilterAllInOneTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_ScannerFilterAllInOneTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_ScannerFilterAllInOneTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_StopWordTermTupleFilterTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_StopWordTermTupleFilterTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_StopWordTermTupleFilterTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_StopWordTermTupleFilterTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_TermTupleScannerTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_TermTupleScannerTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_TermTupleScannerTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_parse_TermTupleScannerTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_HitTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_HitTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_HitTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_HitTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_IndexSearcherTest.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_IndexSearcherTest.java.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_IndexSearcherTest.java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/All Test Suite/D__IdeaWorkspace_SeachEngine_test_hust_cs_javacourse_search_query_IndexSearcherTest.java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.DocumentBuilderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.DocumentBuilderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.DocumentTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.DocumentTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.IndexBuilderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.IndexBuilderTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.IndexTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.IndexTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.PostingListTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.PostingListTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.PostingTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.PostingTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.TermTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.TermTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.TermTupleTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.index.TermTupleTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.LengthTermTupleFilterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.LengthTermTupleFilterTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.PatternTermTupleFilterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.PatternTermTupleFilterTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.ScannerFilterAllInOneTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.ScannerFilterAllInOneTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.StopWordTermTupleFilterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.StopWordTermTupleFilterTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.TermTupleScannerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.parse.TermTupleScannerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.query.HitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.query.HitTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.query.IndexSearcherTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/junitreports/TEST-hust.cs.javacourse.search.query.IndexSearcherTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/old/All Test Suite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/old/All Test Suite/methods-alphabetical.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/old/All Test Suite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/old/All Test Suite/methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Experiment1Tes4_4Linux/test-output/testng-results.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/production/SearchEngineForStudent/hust/cs/javacourse/search/run/TestSearchIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/index.txt" beforeDir="false" afterPath="$PROJECT_DIR$/index/index.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestBuildIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hust/cs/javacourse/search/run/TestSearchIndex.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1qWIvn71wHoMdrkoiC4Zmk0RvqP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RunManager" selected="Application.TestSearchIndex">
+    <configuration name="StringSplitter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hust.cs.javacourse.search.util.StringSplitter" />
+      <module name="SearchEngineForStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hust.cs.javacourse.search.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBuildIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hust.cs.javacourse.search.run.TestBuildIndex" />
+      <module name="SearchEngineForStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hust.cs.javacourse.search.run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSearchIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hust.cs.javacourse.search.run.TestSearchIndex" />
+      <module name="SearchEngineForStudent" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hust.cs.javacourse.search.run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestSearchIndex" />
+        <item itemvalue="Application.TestBuildIndex" />
+        <item itemvalue="Application.StringSplitter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="565e3459-644f-4e39-8ece-23cb8151a5c5" name="Default Changelist" comment="" />
+      <created>1617189153617</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617189153617</updated>
+      <workItem from="1617189155240" duration="460000" />
+      <workItem from="1619867548763" duration="1276000" />
+      <workItem from="1619936493392" duration="2918000" />
+      <workItem from="1620046757630" duration="12929000" />
+      <workItem from="1620060579850" duration="681000" />
+      <workItem from="1620095602315" duration="898000" />
+      <workItem from="1620096678338" duration="690000" />
+      <workItem from="1620473216768" duration="491000" />
+      <workItem from="1620481532671" duration="605000" />
+      <workItem from="1620564708659" duration="1991000" />
+      <workItem from="1620566775708" duration="19000" />
+      <workItem from="1620566841919" duration="165000" />
+      <workItem from="1620567012669" duration="70000" />
+      <workItem from="1620611691499" duration="6486000" />
+    </task>
+    <task id="LOCAL-00001" summary="Java实验原版本">
+      <created>1617189344644</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617189344644</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Java实验原版本">
+      <created>1619936557607</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619936557607</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Java实验原版本">
+      <created>1619936710158</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619936710158</updated>
+    </task>
+    <task id="LOCAL-00004" summary="JavaLab search,parse complete">
+      <created>1620053330260</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620053330260</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Java实验原版本" />
+    <MESSAGE value="JavaLab search,parse complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaLab search,parse complete" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/hust/cs/javacourse/search/index/AbstractDocumentBuilder.java</url>
+          <line>46</line>
+          <properties class="hust.cs.javacourse.search.index.AbstractDocumentBuilder" method="build">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

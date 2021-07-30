@@ -1,0 +1,13 @@
+实验一到实验四可使用测试程序测试，可以观看小电影演示“测试库函数的用法”。实验一至实验四的库压缩在Test.rar中，在主函数外引用测试函数的说明如下：
+
+extern const char * TestQueue(int &s);	//用于实验一
+extern const char * TestQUEUE(int &s);	//用于实验二
+extern const char * TestSTACK(int &s);	//用于实验三
+
+template MAT<int>;			//用于实验四
+template MAT<long long>;		//用于实验四
+extern const char * TestMAT(int &s);	//用于实验四
+
+
+测试通过，从s得到分数100分，返回字符串“Successed！"。否则，返回字符串为出错信息。
+

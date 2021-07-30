@@ -1,0 +1,5 @@
+﻿  lab3.cpp
+C:\Users\huangjunqidemac\Desktop\lab3\lab3\lab3.cpp(102,9): warning C4101: “num”: 未引用的局部变量
+C:\Users\huangjunqidemac\Desktop\lab3\lab3\lab3.cpp(151,1): warning C4297: “STACK::print”: 假定函数不引发异常，但确实发生了
+C:\Users\huangjunqidemac\Desktop\lab3\lab3\lab3.cpp(151,1): message : 在函数上指定了 __declspec(nothrow)、throw()、noexcept(true)或 noexcept
+  lab3.vcxproj -> C:\Users\huangjunqidemac\Desktop\lab3\Debug\lab3.exe

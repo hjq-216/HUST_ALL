@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4a162639-23af-47c4-8979-7783b20268eb" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1tA1oSVnQUEBPHfXgDGnf1X2BDb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="Python.cal_score">
+    <configuration name="cal_score" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Bi-LSTM+CRF" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cal_score.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Bi-LSTM+CRF" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cal_score" />
+        <item itemvalue="Python.run" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a162639-23af-47c4-8979-7783b20268eb" name="Default Changelist" comment="" />
+      <created>1622197254574</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622197254574</updated>
+      <workItem from="1622197256014" duration="3990000" />
+      <workItem from="1622204748720" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1458" height="313" key="GridCell.Tab.0.bottom" timestamp="1622201494635">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="313" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1622201494635" />
+    <state width="1458" height="313" key="GridCell.Tab.0.center" timestamp="1622201494635">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="313" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1622201494635" />
+    <state width="1458" height="313" key="GridCell.Tab.0.left" timestamp="1622201494635">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="313" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1622201494635" />
+    <state width="1458" height="313" key="GridCell.Tab.0.right" timestamp="1622201494635">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="1458" height="313" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1622201494635" />
+    <state width="704" height="316" key="GridCell.Tab.1.bottom" timestamp="1622201494633">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="704" height="316" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1622201494633" />
+    <state width="704" height="316" key="GridCell.Tab.1.center" timestamp="1622201494632">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="704" height="316" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1622201494632" />
+    <state width="704" height="316" key="GridCell.Tab.1.left" timestamp="1622201494632">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="704" height="316" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1622201494632" />
+    <state width="704" height="316" key="GridCell.Tab.1.right" timestamp="1622201494632">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state width="704" height="316" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1622201494632" />
+    <state x="794" y="384" width="718" height="661" key="dock-window-1" timestamp="1622201095301">
+      <screen x="0" y="0" width="1500" height="960" />
+    </state>
+    <state x="794" y="384" width="718" height="661" key="dock-window-1/0.0.1500.960@0.0.1500.960" timestamp="1622201095301" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="predict_entity" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
