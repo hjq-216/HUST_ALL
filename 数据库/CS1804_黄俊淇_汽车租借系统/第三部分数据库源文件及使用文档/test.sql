@@ -1,0 +1,1 @@
+UPDATE borrow SET carCondition = '未加满油' WHERE carID = '002';

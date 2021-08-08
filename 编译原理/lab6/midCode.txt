@@ -1,0 +1,8 @@
+FUNCTION main
+temp1 = 0
+v2 = temp1
+temp2 = 1
+v3[temp3] = temp2
+temp4 = 1
+RETURN temp4
+LABEL label1 :

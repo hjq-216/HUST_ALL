@@ -1,0 +1,21 @@
+FUNCTION f1
+PARAM v2
+PARAM v3
+LABEL label1 :
+FUNCTION f2
+temp2 = 1
+ARG temp2
+temp3 = CALL f1
+temp4 = 1.000000
+temp5 = 2.000000
+ARG temp4
+ARG temp5
+temp6 = CALL f1
+temp7 = 0
+[temp8] = temp7
+temp9 = 1
+v8[temp10] = temp9
+LABEL label4 :
+FUNCTION f3
+LABEL label14 :
+LABEL label13 :
